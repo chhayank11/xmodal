@@ -11,8 +11,10 @@ const Modal = ({ children, isOpen, onclose }) => {
       style={{
         overlay: {
           backgroundColor: "rgba(0, 0, 0, 0.5)",
+          zIndex: 0, // 👈 overlay goes below root
         },
         content: {
+          zIndex: 1,
           top: "50%",
           left: "50%",
           right: "auto",

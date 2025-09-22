@@ -24,7 +24,7 @@ const Modal = ({ children, isOpen, onclose }) => {
         },
       }}
     >
-      <div className="modal">{children}</div>
+      <div>{children}</div>
     </ReactModal>
   );
 };

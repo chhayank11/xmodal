@@ -38,22 +38,23 @@ const App = () => {
         setIsOpen={setIsOpen}
         onclose={() => setIsOpen(false)}
       >
-        <div className="modal-content">
+        <div className="modal">
           <h1>Fill Details</h1>
-          <form className="form" onSubmit={handleSubmit}>
+          <form className="modal-content" onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>
-            <input id="username" type="text" />
+            <input required id="username" type="text" />
             <label htmlFor="email">Email:</label>
-            <input id="email" type="email" />
+            <input required id="email" type="email" />
             <label htmlFor="phone">Phone Number:</label>
             <input
+              required
               id="phone"
               type="number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
             <label htmlFor="dob">Date of Birth:</label>
-            <input id="dob" type="date" />
+            <input required id="dob" type="date" />
 
             <button
               style={{

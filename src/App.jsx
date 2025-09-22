@@ -4,11 +4,15 @@ import Modal from "./components/Modal";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [phone, setPhone] = useState(null);
+  const [phone, setPhone] = useState("");
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     if (phone.toString().length !== 10) {
       alert("Invalid phone number. Please enter a 10-digit phone number.");
+    } else {
+      alert("Form submitted!");
+      setIsOpen(false);
     }
   };
 
@@ -25,18 +29,12 @@ const App = () => {
           borderRadius: "10px",
           cursor: "pointer",
         }}
-        onClick={() => {
-          setIsOpen(true);
-        }}
+        onClick={() => setIsOpen(true)}
       >
         Open Form
       </button>
 
-      <Modal
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        onclose={() => setIsOpen(false)}
-      >
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="modal">
           <h1>Fill Details</h1>
           <form className="modal-content" onSubmit={handleSubmit}>

@@ -1,33 +1,20 @@
 import React from "react";
-import ReactModal from "react-modal";
+import "./Modal.css";
 
-ReactModal.setAppElement("#root");
+const Modal = ({ children, isOpen, setIsOpen }) => {
+  if (!isOpen) return null;
 
-const Modal = ({ children, isOpen, onclose }) => {
+  // Close modal if backdrop clicked
+  const handleBackdropClick = (e) => {
+    if (e.target.className === "modal-backdrop") {
+      setIsOpen(false);
+    }
+  };
+
   return (
-    <ReactModal
-      isOpen={isOpen}
-      onRequestClose={onclose}
-      style={{
-        overlay: {
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          zIndex: 0, // 👈 overlay goes below root
-        },
-        content: {
-          zIndex: 1,
-          top: "50%",
-          left: "50%",
-          right: "auto",
-          bottom: "auto",
-          marginRight: "-50%",
-          transform: "translate(-50%, -50%)",
-          borderRadius: "10px",
-          padding: "20px",
-        },
-      }}
-    >
-      <div>{children}</div>
-    </ReactModal>
+    <div className="modal-backdrop" onClick={handleBackdropClick}>
+      <div className="modal-content">{children}</div>
+    </div>
   );
 };
 

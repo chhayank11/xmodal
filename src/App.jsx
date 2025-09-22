@@ -38,7 +38,7 @@ const App = () => {
         setIsOpen={setIsOpen}
         onclose={() => setIsOpen(false)}
       >
-        <div className="modal">
+        <div className="modal-content">
           <h1>Fill Details</h1>
           <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>

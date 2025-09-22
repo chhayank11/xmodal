@@ -8,3 +8,10 @@
   flex-direction: column;
   align-items: center;
 }
+
+#root {
+  min-height: 100vh; /* give it full height */
+  min-width: 100vw; /* give it full width */
+  position: relative; /* ensures it's a box */
+  background: white; /* makes it visible */
+}

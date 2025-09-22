@@ -7,7 +7,6 @@ const App = () => {
   const [phone, setPhone] = useState(null);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     if (phone.toString().length !== 10) {
       alert("Invalid phone number. Please enter a 10-digit phone number.");
     }

@@ -57,6 +57,7 @@ const App = () => {
             <input required id="dob" type="date" />
 
             <button
+              className="submit-button"
               style={{
                 color: "white",
                 backgroundColor: "blue",
